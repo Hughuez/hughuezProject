@@ -32,7 +32,13 @@ const productosSchema = mongoose.Schema({
             },
             Condition:{
                 type: String,
-                require: [true, "elija la condicion de la unidad (Nuevo o Usado)."]
+                require: [true, "elija la condicion de la unidad (Nuevo o Usado)."],
+                enum: {
+                    values: [
+                        "Nuevo",
+                        "Usado",
+                    ]
+                }
             },
             bodyType: {
                 type: String
